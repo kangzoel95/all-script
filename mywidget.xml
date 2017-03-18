@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+	<!-- __UP_myname__ = nilai dari UserPref dengan name=myname -->
+	<ModulePrefs title="Preferences for __UP_myname__" 
+				height="250"
+				description="Deskripsi"
+				thumbnail="120x60.png"
+	    		author="Jane Smith"
+    	  author_email="xxx@google.com">
+		<!-- favicon
+   		    <Icon>http://remote/favicon.ico</Icon>
+   	    or
+	  	    <Icon mode="base64" type="image/png">base64 encoded data</Icon>
+   		-->
+
+   		<!-- localization languages >> lihat di desktop contohnya (ALL_ALL.xml required [default lang])
+		    <Locale messages="http://doc.examples.googlepages.com/ALL_ALL.xml"/>
+		    <Locale lang="de" messages="http://doc.examples.googlepages.com/de_ALL.xml"/>
+		    <Locale lang="zh-cn" messages="http://doc.examples.googlepages.com/zh_cn_ALL.xml"/>
+		    <Locale lang="fr" messages="http://doc.examples.googlepages.com/fr_ALL.xml"/>
+		    <Locale lang="ja" messages="http://doc.examples.googlepages.com/ja_ALL.xml"/>
+		    <Locale lang="es" messages="http://doc.examples.googlepages.com/es_ALL.xml"/>
+		    <Locale lang="it" messages="http://doc.examples.googlepages.com/it_ALL.xml"/>
+		    <Locale lang="ru" messages="http://doc.examples.googlepages.com/ru_ALL.xml"/> 
+		-->
+	</ModulePrefs>
+
+	<!-- fitur -->
+
+	<!-- display_name = nama form -->
+	<!-- text data type (empty) -->
+	<UserPref name="myname" display_name="Nama Anda:" required="true" />
+
+	<!-- bool data type -->
+	<UserPref name="mychoice" display_name="Apakah anda seorang pelajar?" datatype="bool" default_value="true"/>
+
+  	<!-- gadget content -->
+	<Content type="html">
+	 <![CDATA[ 
+
+
+	   <script>
+	   	function a(){
+	   		alert('message dismissed');
+	   	}
+	   	createDismissibleMessage('Hello!', a())
+
+	   	var prefs = new gadget.Prefs();
+	    var element = document.getElementById('content_div');
+
+	    html += "<br><FONT SIZE=6>Good " + salutation + ", " +
+           prefs.getString("myname") + "!!!<br><br></FONT>";
+
+        element.innerHTML = html;
+
+	   </script>
+	 ]]>
+	</Content> 
+</Module>
