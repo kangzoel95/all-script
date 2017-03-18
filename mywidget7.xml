@@ -1,0 +1,33 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <!-- __UP_myname__ = nilai dari UserPref dengan name=myname -->
+    <ModulePrefs title="Ngising Widget" height="250" description="Deskripsi" thumbnail="120x60.png" author="Jane Smith" author_email="xxx@google.com">
+    </ModulePrefs>
+
+    <!-- display_name = nama form -->
+    <!-- text data type (empty) -->
+    <UserPref name="myname" display_name="Nama Anda:" required="true" />
+
+    <!-- gadget content -->
+    <Content type="html">
+        <![CDATA[ 
+	 	<div id='content_div'>
+    ngising
+	 	</div>
+	   <script>
+	   	var prefs = new gadgets.Prefs();
+console.log(prefs);
+console.log(getPostsFeedUrl(););
+/*--
+getCurrentPostJson(callback){
+  console.log(callback);
+};
+getPostsJson(callback){
+  console.log(callback);
+};
+--*/
+</script>
+	 ]]>
+    </Content>
+</Module>
